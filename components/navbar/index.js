@@ -26,6 +26,7 @@ class Navbar extends Component {
         onClick={e => handleClick(e)}
         selectedKeys={[this.state.current]}
         mode="horizontal"
+        theme={this.state.theme}
       >
         <Menu.Item key="home">
           <Icon type="home" />Home

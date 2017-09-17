@@ -1,21 +1,27 @@
 import React from 'react';
 import Head from 'next/head';
-import NavBar from '../components/navbar';
-import Footer from '../components/footer';
 
-const Layout = ({ children }) => (
-  <div>
+import { Layout } from 'antd';
+import NavBar from '../components/navbar';
+
+const { Header, Footer, Content } = Layout;
+
+// import Footer from '../components/footer';
+
+const CustomLayout = ({ children }) => (
+  <Layout>
     <Head>
       <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/antd/2.9.3/antd.min.css" />
     </Head>
-    <NavBar />
-
-    <div>
+    <Header style={{ background: '#fff', height: '47px', lineHeight: '47px' }}>
+      <NavBar />
+    </Header>
+    <Content>
       {children}
-    </div>
+    </Content>
 
-    <Footer />
-  </div>
+    <Footer>Footer</Footer>
+  </Layout>
 );
 
-export default Layout;
+export default CustomLayout;
