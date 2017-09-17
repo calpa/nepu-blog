@@ -1,0 +1,9 @@
+@mixin opacity($opacity)
+  opacity: $opacity
+  filter: alpha(opacity=($opacity * 100))
+
+.example
+  @include opacity(0.6)
+  font-size: 24px
+  width: 50vw
+  display: flex
