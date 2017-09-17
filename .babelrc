@@ -6,7 +6,7 @@
         "extensions": [".css", ".sass", ".scss"],
         "append": ["postcss-cssnext"],
         "extractCss": "./static/css/bundle.css",
-        "preprocessCss": "./pre-processor.js"
+        "preprocessCss": "../pre-processor.js"
       }
     ],
     [

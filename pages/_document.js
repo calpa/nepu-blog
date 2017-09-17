@@ -9,9 +9,11 @@ export default class MyDocument extends Document {
 
   render() {
     return (
-      <html lang="en">
+      <html lang="zh">
         <Head>
           <link rel="stylesheet" href="/static/css/bundle.css" />
+          <meta name="viewport" content="width=device-width, initial-scale=1" />
+          <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/antd/2.9.3/antd.min.css" />
         </Head>
         <body>
           {this.props.customValue}
