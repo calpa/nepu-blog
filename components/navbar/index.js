@@ -1,7 +1,8 @@
-import Link from 'next/link'
+import React from 'react';
+import Link from 'next/link';
 
 // example header component
-export default () =>
+export default () => (
   <nav>
     <ul>
       <li>
@@ -21,3 +22,4 @@ export default () =>
       </li>
     </ul>
   </nav>
+);
