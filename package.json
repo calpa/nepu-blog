@@ -1,8 +1,8 @@
 {
-  "name": "calpa-blog-next",
+  "name": "nepu-blog",
   "version": "0.1.0",
   "main": "index.js",
-  "license": "ISC",
+  "license": "MIT",
   "author": "calpa",
   "scripts": {
     "start": "next",
