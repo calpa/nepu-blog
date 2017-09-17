@@ -1,68 +1,47 @@
-import React from 'react';
-// import Link from 'next/link';
+import React, { Component } from 'react';
+import Router from 'next/router';
+import { Menu, Icon } from 'antd'; /* Antd */
 
-// Global variables
-const config = {
-  title: 'Calpa',
+const handleClick = (e) => {
+  console.log(e);
+  Router.push(`/${e.key}`);
 };
 
-const page = '';
-const site = {
-  pages: [{ path: 'path', title: 'title' }],
-};
+class Navbar extends Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+      mode: 'horizontal',
+      theme: 'light',
+      loading: false,
+      registermodalvisible: false,
+      loginmodalvisible: false,
+      collapsed: false,
+    };
+  }
 
+  render() {
+    return (
+      <Menu
+        onClick={e => handleClick(e)}
+        selectedKeys={[this.state.current]}
+        mode="horizontal"
+      >
+        <Menu.Item key="home">
+          <Icon type="home" />Home
+        </Menu.Item>
+        <Menu.Item key="tags">
+          <Icon type="tags" />Tags
+        </Menu.Item>
+        <Menu.Item key="about">
+          <Icon type="user" />About
+        </Menu.Item>
+        <Menu.Item key="archive">
+          <Icon type="api" />Archive
+        </Menu.Item>
+      </Menu>
+    );
+  }
+}
 
-const isPost = () => false;
-const isTag = () => true;
-const isHome = () => true;
-
-const NavBar = () => (
-  <nav
-    className={'navbar', 'navbar-default', 'navbar-custom', 'navbar-fixed-top', isPost() ? '' : 'is-fixed'}
-    id="nav-top"
-    data-ispost={isPost()}
-    data-istags={isTag()}
-    data-ishome={isHome()}
-  >
-    <div className="container-fluid">
-      <div className="navbar-header page-scroll">
-        <button type="button" className="navbar-toggle">
-          <span className="sr-only">Toggle navigation</span>
-          <span className="icon-bar" />
-          <span className="icon-bar" />
-          <span className="icon-bar" />
-        </button>
-        <a className="navbar-brand animated pulse" href="/">
-          <span className="brand-logo">{config.title }</span>
-          <span className="brand-blog">'s Blog</span>
-        </a>
-      </div>
-
-      <div id="huxblog_navbar">
-        <div className="navbar-collapse">
-          <ul className="nav navbar-nav navbar-center title-calpa display-none">
-            <li>
-              <a href="/">
-                { page.title || 'home'}
-              </a>
-            </li>
-          </ul>
-          <ul className="nav navbar-nav navbar-right">
-            <li>
-              <a href={config.root}>Home</a>
-            </li>
-            {site.pages.forEach(p => (
-              <li>
-                <a href="<{ config.root }<{ p.path.replace('index.html', '') }">
-                  { p.title }
-                </a>
-              </li>
-            ))}
-          </ul>
-        </div>
-      </div>
-    </div>
-  </nav>
-);
-
-export default NavBar;
+export default Navbar;

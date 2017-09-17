@@ -19,7 +19,7 @@ export default () => (
           wrapperCol={{ span: 8 }}
         >
           <InputNumber size="large" min={1} max={10} style={{ width: 100 }} defaultValue={3} name="inputNumber" />
-          <a href="#">Link</a>
+          <a href="/about">Link</a>
         </FormItem>
 
         <FormItem
