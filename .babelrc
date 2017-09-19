@@ -3,16 +3,14 @@
   "plugins": [
     [
       "css-modules-transform", {
-        "extensions": [".css", ".sass", ".scss"],
+        "extensions": [".css", ".sass"],
         "append": ["postcss-cssnext"],
         "extractCss": "./static/css/bundle.css",
-        "preprocessCss": "../pre-processor.js"
+        "preprocessCss": "./pre-processor.js"
       }
     ],
-    [
-      "import", {
-        "libraryName": "antd"
-      }
-    ]
+    ["import", {
+      "libraryName": "antd"
+    }]
   ]
 }
