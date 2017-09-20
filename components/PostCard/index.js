@@ -3,7 +3,7 @@ import { Card } from 'antd';
 import PropTypes from 'prop-types';
 
 const Style = () => (
-  <style jsx>{`
+  <style>{`
     span {
       background: #eee;
       font-size: 16px;

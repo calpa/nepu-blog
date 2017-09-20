@@ -7,7 +7,7 @@ import { getPosts } from '../api';
 
 // Use styled-jsx to style the component
 const Style = () => (
-  <style jsx>{`
+  <style>{`
     h1 {
       fontSize: 36px;
       background: #6cf;
