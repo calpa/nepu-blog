@@ -10,7 +10,7 @@ export const getAbout = async () => {
 };
 
 export const getPosts = async () => {
-  const res = await axios.get(`${API_BASE_URL}/spaces/${API_SPACE_ID}/entries?access_token=${API_TOKEN}&content_type=post`);
-  console.log(res);
+  const POST_URL = `${API_BASE_URL}/spaces/${API_SPACE_ID}/entries?access_token=${API_TOKEN}`;
+  const res = await axios.get(POST_URL);
   return res;
 };
