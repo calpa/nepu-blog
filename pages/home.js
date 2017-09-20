@@ -1,26 +1,40 @@
 import React from 'react';
 import Layout from '../layouts';
 
+import PostCard from '../components/PostCard';
 import { getPosts } from '../api';
 
-import ss from './home.sass';
+// Use styled-jsx to style the component
+const Style = () => (
+  <style jsx>{`
+    h1 {
+      fontSize: 36px;
+      background: #6cf;
+    }
+  `}
+  </style>
+);
 
-const Home = ({ data }) => (
+const Home = ({ items }) => (
   <Layout>
-    <div>Home</div>
-    <div className={ss.example}>Example</div>
-    {data.items.map(item => (
-      <div>
-        <h2>{item.fields.title}</h2>
-        <span>{item.fields.tags}</span>
-      </div>
+    <h1>Home</h1>
+
+    {items.map(item => (
+      <PostCard
+        title={item.fields.title}
+        tags={item.fields.tags}
+        createdDate={item.fields.createdDate}
+        key={item.sys.id}
+      />
     ))}
+    <Style />
   </Layout>
 );
 
 Home.getInitialProps = async () => {
   const { data } = await getPosts();
-  return { data };
+  const items = data.items;
+  return { items };
 };
 
 export default Home;
