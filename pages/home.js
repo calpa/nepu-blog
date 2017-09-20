@@ -1,4 +1,5 @@
 import React from 'react';
+import moment from 'moment';
 import Layout from '../layouts';
 
 import PostCard from '../components/PostCard';
@@ -21,10 +22,10 @@ const Home = ({ items }) => (
 
     {items.map(item => (
       <PostCard
-        title={item.fields.title}
-        tags={item.fields.tags}
-        createdDate={item.fields.createdDate}
-        key={item.sys.id}
+        title={item.title}
+        tags={item.tags}
+        createdDate={item.createdDate}
+        key={item.id}
       />
     ))}
     <Style />
@@ -33,7 +34,27 @@ const Home = ({ items }) => (
 
 Home.getInitialProps = async () => {
   const { data } = await getPosts();
-  const items = data.items;
+  const items = data.items.map((item) => {
+    if (item.sys.contentType.sys.id !== 'about') {
+      const createdDate = moment(item.fields.createdDate).format('MMMM Do YYYY, h:mm a');
+
+      return {
+        title: item.fields.title,
+        tags: item.fields.tags,
+        createdDate,
+        id: item.sys.id,
+      };
+    }
+
+    return {
+      title: '關於我',
+      tags: 'calpa',
+      createdDate: moment().format('MMMM Do YYYY, h:mm a'),
+      id: item.sys.id,
+    };
+  }, []);
+
+
   return { items };
 };
 

@@ -8,12 +8,17 @@ const Style = () => (
       background: #eee;
       font-size: 16px;
     }
+
+    .PostCard {
+      width: 500px;
+      margin: 10px;
+    }
   `}
   </style>
 );
 
 const PostCard = ({ title, tags, createdDate }) => (
-  <Card title={title} extra={createdDate} >
+  <Card title={title} extra={createdDate} className="PostCard">
     <div>
       <span>{tags}</span>
     </div>
