@@ -6,6 +6,7 @@
   "author": "calpa",
   "scripts": {
     "start": "next",
+    "dev": "export NODE_ENV=development && next",
     "build": "next build",
     "run": "next start"
   },
@@ -18,17 +19,15 @@
     "prop-types": "^15.5.10",
     "react": "^15.4.2",
     "react-dom": "^15.4.2",
-    "react-markdown": "^2.5.0"
+    "react-markdown": "^2.5.0",
+    "webpack-bundle-analyzer": "^2.9.0"
   },
   "devDependencies": {
-    "babel-plugin-css-modules-transform": "^1.2.1",
     "eslint": "^4.7.0",
     "eslint-config-airbnb": "^15.1.0",
     "eslint-plugin-import": "^2.7.0",
     "eslint-plugin-jsx-a11y": "^5.1.1",
     "eslint-plugin-react": "^7.3.0",
-    "node-sass": "^4.5.0",
-    "postcss": "^5.2.16",
-    "postcss-cssnext": "^2.10.0"
+    "webpack-dashboard": "^1.0.0-5"
   }
 }
