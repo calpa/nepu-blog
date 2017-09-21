@@ -16,23 +16,25 @@ const Style = () => (
   </style>
 );
 
-const Home = ({ items }) => (
+const Post = ({ items }) => (
   <Layout>
-    <h1>Home</h1>
+    <div>
+      <h1>博客文章</h1>
 
-    {items.map(item => (
-      <PostCard
-        title={item.title}
-        tags={item.tags}
-        createdDate={item.createdDate}
-        key={item.id}
-      />
-    ))}
-    <Style />
+      {items.map(item => (
+        <PostCard
+          title={item.title}
+          tags={item.tags}
+          createdDate={item.createdDate}
+          key={item.id}
+        />
+      ))}
+      <Style />
+    </div>
   </Layout>
 );
 
-Home.getInitialProps = async () => {
+Post.getInitialProps = async () => {
   const { data } = await getPosts();
   const items = data.items.map((item) => {
     if (item.sys.contentType.sys.id !== 'about') {
@@ -58,4 +60,4 @@ Home.getInitialProps = async () => {
   return { items };
 };
 
-export default Home;
+export default Post;

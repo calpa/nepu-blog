@@ -3,7 +3,6 @@ import Router from 'next/router';
 import { Menu, Icon } from 'antd'; /* Antd */
 
 const handleClick = (e) => {
-  console.log(e);
   Router.push(`/${e.key}`);
 };
 
@@ -30,6 +29,9 @@ class Navbar extends Component {
       >
         <Menu.Item key="home">
           <Icon type="home" />Home
+        </Menu.Item>
+        <Menu.Item key="post">
+          <Icon type="file-text" />Post
         </Menu.Item>
         <Menu.Item key="tags">
           <Icon type="tags" />Tags

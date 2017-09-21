@@ -1,6 +1,7 @@
 import React from 'react';
 
-import { Layout } from 'antd';
+import { Layout, LocaleProvider } from 'antd';
+import enUS from 'antd/lib/locale-provider/en_US';
 import NavBar from '../components/navbar';
 
 const { Header, Footer, Content } = Layout;
@@ -9,14 +10,18 @@ const { Header, Footer, Content } = Layout;
 
 const CustomLayout = ({ children }) => (
   <Layout>
+
     <Header style={{ background: '#fff', height: '47px', lineHeight: '47px' }}>
       <NavBar />
     </Header>
     <Content>
-      {children}
+      <LocaleProvider locale={enUS}>
+        {children}
+      </LocaleProvider>
     </Content>
 
     <Footer>Footer</Footer>
+
   </Layout>
 );
 

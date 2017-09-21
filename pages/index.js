@@ -1,17 +1,14 @@
 import React from 'react';
-import Head from 'next/head';
-import { Form, Select, InputNumber, DatePicker, Switch, Slider, Button, LocaleProvider } from 'antd';
-import enUS from 'antd/lib/locale-provider/en_US';
+import { Form, Select, InputNumber, DatePicker, Switch, Slider, Button } from 'antd';
+
+import Layout from '../layouts';
 
 const FormItem = Form.Item;
 const { Option } = Select;
 
 export default () => (
-  <LocaleProvider locale={enUS}>
+  <Layout>
     <div style={{ marginTop: 100 }}>
-      <Head>
-        <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/antd/2.9.3/antd.min.css" />
-      </Head>
       <Form layout="horizontal">
         <FormItem
           label="Input Number"
@@ -71,5 +68,5 @@ export default () => (
         </FormItem>
       </Form>
     </div>
-  </LocaleProvider>
+  </Layout>
 );
