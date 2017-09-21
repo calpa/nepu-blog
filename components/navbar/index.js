@@ -30,8 +30,8 @@ class Navbar extends Component {
         <Menu.Item key="home">
           <Icon type="home" />Home
         </Menu.Item>
-        <Menu.Item key="post">
-          <Icon type="file-text" />Post
+        <Menu.Item key="posts">
+          <Icon type="file-text" />Posts
         </Menu.Item>
         <Menu.Item key="tags">
           <Icon type="tags" />Tags

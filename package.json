@@ -5,7 +5,7 @@
   "license": "MIT",
   "author": "calpa",
   "scripts": {
-    "start": "next",
+    "start": "node server.js",
     "dev": "export NODE_ENV=development && next",
     "build": "next build",
     "run": "next start"
@@ -14,8 +14,10 @@
     "antd": "^2.13.2",
     "axios": "^0.16.2",
     "babel-plugin-import": "^1.4.0",
+    "express": "^4.15.4",
     "moment": "^2.18.1",
     "next": "^3.2.2",
+    "next-routes": "^1.0.40",
     "prop-types": "^15.5.10",
     "react": "^15.4.2",
     "react-dom": "^15.4.2",

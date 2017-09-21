@@ -10,7 +10,17 @@ export const getAbout = async () => {
 };
 
 export const getPosts = async () => {
-  const POST_URL = `${API_BASE_URL}/spaces/${API_SPACE_ID}/entries?access_token=${API_TOKEN}`;
-  const res = await axios.get(POST_URL);
+  // https://cdn.contentful.com/spaces/n3ctvxixp1mr/entries?order=-fields.createdDate&content_type=blogPost&access_token=22acebb1f8d8c45324d922831c49a56d2b2d317d1f72c9d6326c462046ecc13a
+
+  const order = '-fields.createdDate';
+  const contentType = 'blogPost';
+  const POST_URL = `${API_BASE_URL}/spaces/${API_SPACE_ID}/entries`;
+  const res = await axios.get(POST_URL, {
+    params: {
+      order,
+      content_type: contentType,
+      access_token: API_TOKEN,
+    },
+  });
   return res;
 };
