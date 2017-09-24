@@ -1,4 +1,9 @@
 import React from 'react';
+
+// Next.js + Redux
+import withRedux from 'next-redux-wrapper';
+import { initStore } from '../store';
+
 import Layout from '../layouts';
 
 const Post = ({ post }) => (
@@ -16,4 +21,4 @@ Post.getInitialProps = async ({ query }) => {
 };
 
 
-export default Post;
+export default withRedux(initStore)(Post);

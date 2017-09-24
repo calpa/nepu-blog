@@ -4,6 +4,10 @@ import PropTypes from 'prop-types';
 
 import { Row, Col } from 'antd';
 
+// Next.js + Redux
+import withRedux from 'next-redux-wrapper';
+import { initStore } from '../store';
+
 import SideBar from '../components/SideBar';
 
 import CustomLayout from '../layouts';
@@ -35,4 +39,4 @@ About.defaultProps = {
   content: '# This is a header\n\nAnd this is a paragraph',
 };
 
-export default About;
+export default withRedux(initStore)(About);

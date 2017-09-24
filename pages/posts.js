@@ -3,6 +3,10 @@ import moment from 'moment';
 
 import { Col } from 'antd';
 
+// Next.js + Redux
+import withRedux from 'next-redux-wrapper';
+import { initStore } from '../store';
+
 import Layout from '../layouts';
 
 import SideBar from '../components/SideBar';
@@ -73,4 +77,4 @@ Post.getInitialProps = async () => {
   return { items };
 };
 
-export default Post;
+export default withRedux(initStore)(Post);

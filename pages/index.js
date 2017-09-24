@@ -1,12 +1,16 @@
 import React from 'react';
 import { Form, Select, InputNumber, DatePicker, Switch, Slider, Button } from 'antd';
 
+// Next.js + Redux
+import withRedux from 'next-redux-wrapper';
+import { initStore } from '../store';
+
 import Layout from '../layouts';
 
 const FormItem = Form.Item;
 const { Option } = Select;
 
-export default () => (
+const Index = () => (
   <Layout>
     <div style={{ marginTop: 100 }}>
       <Form layout="horizontal">
@@ -70,3 +74,6 @@ export default () => (
     </div>
   </Layout>
 );
+
+// export default Index;
+export default withRedux(initStore)(Index);

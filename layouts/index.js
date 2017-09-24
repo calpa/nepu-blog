@@ -1,4 +1,5 @@
 import React from 'react';
+import { connect } from 'react-redux';
 
 import { Layout, LocaleProvider } from 'antd';
 import enUS from 'antd/lib/locale-provider/en_US';
@@ -6,11 +7,8 @@ import NavBar from '../components/navbar';
 
 const { Header, Footer, Content } = Layout;
 
-// import Footer from '../components/footer';
-
-const CustomLayout = ({ children }) => (
+const CustomLayout = connect(state => state)(({ children }) => (
   <Layout>
-
     <Header style={{ background: '#fff', height: '47px', lineHeight: '47px' }}>
       <NavBar />
     </Header>
@@ -23,6 +21,6 @@ const CustomLayout = ({ children }) => (
     <Footer>Footer</Footer>
 
   </Layout>
-);
+));
 
 export default CustomLayout;
