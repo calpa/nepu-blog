@@ -1,7 +1,11 @@
 import React from 'react';
 import moment from 'moment';
+
+import { Col } from 'antd';
+
 import Layout from '../layouts';
 
+import SideBar from '../components/SideBar';
 import PostCard from '../components/PostCard';
 import { getPosts } from '../api';
 
@@ -19,18 +23,20 @@ const Style = () => (
 const Post = ({ items }) => (
   <Layout>
     <div>
+      <SideBar />
       <h1>博客文章</h1>
-
-      {items.map(item => (
-        <PostCard
-          title={item.title}
-          tags={item.tags}
-          createdDate={item.createdDate}
-          url={item.url}
-          urlDate={item.urlDate}
-          key={item.id}
-        />
-      ))}
+      <Col span={16}>
+        {items.map(item => (
+          <PostCard
+            title={item.title}
+            tags={item.tags}
+            createdDate={item.createdDate}
+            url={item.url}
+            urlDate={item.urlDate}
+            key={item.id}
+          />
+        ))}
+      </Col>
       <Style />
     </div>
   </Layout>

@@ -13,7 +13,8 @@ export default class MyDocument extends Document {
         <Head>
           <link rel="stylesheet" href="/static/css/bundle.css" />
           <meta name="viewport" content="width=device-width, initial-scale=1" />
-          <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/antd/2.9.3/antd.min.css" />
+          <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/antd/2.9.3/antd.min.css" />
+          <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" />
         </Head>
         <body>
           {this.props.customValue}

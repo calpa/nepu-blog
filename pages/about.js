@@ -3,6 +3,9 @@ import ReactMarkdown from 'react-markdown';
 import PropTypes from 'prop-types';
 
 import { Row, Col } from 'antd';
+
+import SideBar from '../components/SideBar';
+
 import CustomLayout from '../layouts';
 import { getAbout } from '../api';
 
@@ -10,7 +13,8 @@ import { getAbout } from '../api';
 const About = ({ content }) => (
   <CustomLayout>
     <Row>
-      <Col span={16} offset={4}>
+      <SideBar />
+      <Col span={16}>
         <ReactMarkdown source={content} />
       </Col>
     </Row>
