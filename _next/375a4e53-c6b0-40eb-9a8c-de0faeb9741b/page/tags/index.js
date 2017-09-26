@@ -1,6 +1,0 @@
-
-          window.__NEXT_REGISTER_PAGE('/tags', function() {
-            var comp = module.exports=webpackJsonp([8],{793:function(e,t,r){e.exports=r(794)},794:function(e,t,r){"use strict";function n(e){return e&&e.__esModule?e:{default:e}}Object.defineProperty(t,"__esModule",{value:!0});var u=r(28),l=n(u),a=r(32),o=n(a),i=r(0),f=n(i),s=r(47),c=n(s),d=r(48),v=r(64),p=n(v),m=function(e){var t=e.isServer;return f.default.createElement(p.default,null,f.default.createElement("div",null,f.default.createElement("h1",null,"Tags"),f.default.createElement("div",null,"Render in Server: ",!0===t?"true":"false")))};m.getInitialProps=function(){var e=(0,o.default)(l.default.mark(function e(t){var r=t.store,n=t.isServer;return l.default.wrap(function(e){for(;;)switch(e.prev=e.next){case 0:return console.log(r,n),e.abrupt("return",{isServer:n});case 2:case"end":return e.stop()}},e,void 0)}));return function(t){return e.apply(this,arguments)}}(),t.default=(0,c.default)(d.initStore)(m)}},[793]);
-            return { page: comp.default }
-          })
-        
