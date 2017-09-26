@@ -1,7 +1,7 @@
 const routes = require('next-routes')();
 
 routes
-  .add('/home', 'posts')
+  .add('/home', '/')
   .add('about')
   .add('posts')
   .add('/post/:year/:month/:day/:name', 'post')

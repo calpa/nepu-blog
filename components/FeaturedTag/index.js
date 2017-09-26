@@ -7,6 +7,7 @@ const FeaturedTags = ({ tags }) => (
         <a
           href={`tags${tag}`}
           title={`tags${tag}`}
+          key={tag}
         >
           { tag }
         </a>

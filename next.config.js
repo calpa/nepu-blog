@@ -14,4 +14,13 @@ module.exports = {
 
     return config;
   },
+
+  assetPrefix: '/nepu-blog',
+
+  exportPathMap() {
+    return {
+      '/': { page: '/' },
+      '/about': { page: '/about' },
+    };
+  },
 };
